@@ -12,3 +12,7 @@ H-00-S01: hero; H-00-S02: introduction; H-00-S03: research; H-00-S04: technology
 The page presently uses CSS-rendered coastal art and **temporary placeholder symbols in place of the two user-provided lab logos**. The source binary assets need to be uploaded to this repository separately before visual approval. This is a functional design preview, not the final approved illustrated homepage.
 
 Email: chlin.geo@mail.nsysu.edu.tw. Lab: 海工館 5003 室.
+
+
+## H-00 asset verification (2026-11-01)
+All three paths are uploaded in `main`: `assets/logo-applications.png`, `assets/logo-measurement.png`, `assets/hero-concept.webp`. HTML/CSS references are present. Please confirm GitHub Pages build source is `main` / `(root)` and the latest deploy is successful.
