@@ -114,3 +114,6 @@
 @media(max-width:550px){.subpage-grid{grid-template-columns:1fr}.subpage-hero{padding:22px}}
 
 .tech-link{display:block;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}.tech-link:hover,.tech-link:focus-visible{transform:translateY(-4px);box-shadow:0 8px 20px #0a759329}.tech-link:focus-visible{outline:3px solid #087fc4;outline-offset:2px}
+
+/* V1.1 Technology category links */
+.technology-category-links{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0 4px}.technology-category-links a{padding:15px 20px;background:linear-gradient(90deg,#e7f8fc,#fff);border:1px solid #c4e9f2;border-radius:12px;font-size:15px;font-weight:700;color:#0b5480}.technology-category-links span{display:block;color:#4e829b;font-size:12px;font-weight:400;margin-top:3px}.technology-category-links a:hover{border-color:#0ea9c2}.subpage-links{margin:35px 0;font-size:14px;color:#17769a}.subpage-links a{color:#087fc4}@media(max-width:650px){.technology-category-links{grid-template-columns:1fr}}
