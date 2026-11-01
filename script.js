@@ -1,0 +1,1 @@
+document.querySelector('#lang')?.addEventListener('click',()=>{const b=document.querySelector('#lang');b.textContent=b.textContent==='中 / EN'?'EN / 中':'中 / EN';});
