@@ -73,3 +73,26 @@
 #about p.en{
   color:#476b89;
 }
+
+/* H-00-S02 image display correction: preserve whole illustration and its aspect ratio */
+#about .intro-visual.intro-image-card {
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 28px;
+  overflow: hidden;
+}
+#about .intro-visual.intro-image-card::before,
+#about .intro-visual.intro-image-card::after { content: none; display: none; }
+#about .intro-visual.intro-image-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+@media(max-width:900px){
+  #about .intro { grid-template-columns:1fr; }
+  #about .intro-visual.intro-image-card { width:100%; }
+}
