@@ -112,3 +112,5 @@
 .subpubs{display:grid;gap:10px}.subpubs a{padding:15px;border:1px solid #d2e9f1;border-radius:11px;background:#fff}.subpubs b,.subpubs small{display:block;line-height:1.5}.subpubs small{color:#648296;margin-top:5px}
 @media(max-width:800px){.subpage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:550px){.subpage-grid{grid-template-columns:1fr}.subpage-hero{padding:22px}}
+
+.tech-link{display:block;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}.tech-link:hover,.tech-link:focus-visible{transform:translateY(-4px);box-shadow:0 8px 20px #0a759329}.tech-link:focus-visible{outline:3px solid #087fc4;outline-offset:2px}
