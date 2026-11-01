@@ -93,3 +93,22 @@
 #research .research-card:focus-visible{outline:3px solid #0787bd;outline-offset:2px}
 @media(max-width:950px){#research .research-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:560px){#research .research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#research .research-card{min-height:160px}}
+
+/* Architecture V1.0: consistent secondary pages and homepage section entrances */
+.section-more{text-align:right;margin:-11px 0 12px;font-size:13px}.section-more a{color:#087fc4;font-weight:700}
+.subpage-wrap{max-width:1150px;margin:35px auto 75px;padding:0 22px}
+.back-home{color:#087fc4;font-size:14px;font-weight:700}
+.subpage-hero{background:linear-gradient(110deg,#e3f8ff,#f9fdff);border:1px solid #c6e8f5;border-radius:22px;padding:32px 35px;margin:22px 0 36px}
+.page-code{display:inline-block;background:#087fc4;color:#fff;padding:5px 11px;border-radius:8px;font-weight:700;letter-spacing:1px;font-size:13px}
+.subpage-hero h1{font-size:clamp(26px,3vw,38px);margin:17px 0 3px;color:#0d426a}
+.subpage-en{color:#3183ab;font-size:19px;margin:0 0 25px}.subpage-desc{font-size:17px;line-height:1.9;max-width:820px}
+.draft-status{font-size:12px;color:#527b91;background:#fff;border:1px solid #d1e6f2;padding:5px 10px;border-radius:20px}
+.subpage-wrap h2{font-size:23px;border-left:6px solid #21bbc5;padding-left:12px;margin:35px 0 18px}.subpage-wrap h2 span{color:#6391a8;font-weight:400;font-size:14px}
+.subpage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.subpage-link{display:flex;flex-direction:column;gap:9px;padding:23px 20px;border:1px solid #c6e6f1;border-radius:15px;background:#fff;transition:transform .2s}
+.subpage-link:hover{transform:translateY(-3px);box-shadow:0 8px 20px #0a72921d}
+.subpage-link .page-code{align-self:flex-start}.subpage-link strong{font-size:18px}.subpage-link small{color:#53778b}.subpage-link .go{font-size:12px;color:#0783ad;margin-top:auto}
+.subpage-lead{max-width:410px;width:100%;height:auto;display:block;border-radius:17px;margin:12px auto 30px;background:#e4f8fc}
+.subpubs{display:grid;gap:10px}.subpubs a{padding:15px;border:1px solid #d2e9f1;border-radius:11px;background:#fff}.subpubs b,.subpubs small{display:block;line-height:1.5}.subpubs small{color:#648296;margin-top:5px}
+@media(max-width:800px){.subpage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){.subpage-grid{grid-template-columns:1fr}.subpage-hero{padding:22px}}
