@@ -126,3 +126,15 @@
 #technology .tech-link p{margin:2px 0 5px}
 #technology .tech-link small{margin-top:auto;line-height:1.6}
 @media(max-width:700px){#technology .tech-grid{grid-template-columns:1fr}#technology .tech-link{max-width:480px;width:100%;margin:0 auto}}
+
+/* Shared publication and news listings */
+.news-feed{background:#fff;border:1px solid #cde9f4;border-radius:12px;padding:8px 18px}
+.news-feed .news-item{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid #d7edf5;color:#17456a;text-decoration:none}
+.news-feed .news-item:last-child{border-bottom:0}
+.news-feed .news-item time{flex:0 0 auto;color:white;background:#22a8bc;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:700}
+.news-feed .news-item span{flex:1;min-width:0}.news-feed .news-item strong{display:block;font-size:14px}
+.news-feed .news-item small{display:block;margin-top:5px;color:#65859a;line-height:1.5}
+.news-feed .news-item em{color:#0a97af;font-style:normal}
+.feed-empty{padding:12px 0;color:#597c91;font-size:14px}
+.feed-error{border-color:#e6ad9e}
+.subpubs[data-megm-feed="publications"] a{display:block}

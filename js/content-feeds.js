@@ -1,0 +1,15 @@
+/* MEGM shared publications/news feeds. One data source for home and section indexes. */
+(()=>{
+const root=document.querySelector('[data-megm-feed-root]')?.dataset.megmFeedRoot||'';
+const create=(tag,cl,text)=>{const el=document.createElement(tag);if(cl)el.className=cl;if(text!==undefined)el.textContent=text;return el;};
+async function load(file){const response=await fetch(root+'data/'+file,{cache:'no-cache'});if(!response.ok)throw new Error(file+' status '+response.status);const rows=await response.json();if(!Array.isArray(rows))throw new Error(file+' requires array');return rows;}
+function publicationLink(item,compact){const a=create('a');const doi=typeof item.doi==='string'&&/^10\.[^\s/]+\/.+/.test(item.doi)?'https://doi.org/'+item.doi:null;const url=doi||(typeof item.url==='string'&&/^https:\/\//.test(item.url)?item.url:null);a.href=url||root+'publications/u-01.html';if(url){a.target='_blank';a.rel='noopener noreferrer';}
+if(compact){a.append(create('time','',String(item.year||'')));const info=create('span');info.append(create('strong','',item.title||''),create('small','',item.journal||''));a.append(info,create('em','','↗'));}
+else{a.append(create('b','',(item.year||'')+' · '+(item.title||'')),create('small','',(item.journal||'')+(item.doi?' · DOI '+item.doi:'')));}
+return a;}
+function newsLink(item){const a=create('a','news-item');const url=typeof item.url==='string'&&item.url.trim()?item.url:root+'news/index.html';a.href=url;if(/^https?:\/\//.test(url)){a.target='_blank';a.rel='noopener noreferrer';}a.append(create('time','',item.date||''));const copy=create('span');copy.append(create('strong','',item.title||''));if(item.summary)copy.append(create('small','',item.summary));a.append(copy,create('em','','↗'));return a;}
+function sortP(a,b){return Number(b.year||0)-Number(a.year||0)||String(b.date||'').localeCompare(String(a.date||''));}
+function sortN(a,b){return String(b.date||'').localeCompare(String(a.date||''));}
+async function draw(){const targets=[...document.querySelectorAll('[data-megm-feed]')];for(const box of targets){const what=box.dataset.megmFeed;try{const records=what==='news'?await load('news.json'):await load('publications.json');const sorted=records.filter(x=>x&&typeof x==='object'&&x.published!==false).sort(what==='news'?sortN:sortP);let visible=sorted;if(what==='featured-publications')visible=sorted.filter(x=>x.featured===true).slice(0,4);if(what==='news'&&box.dataset.limit)visible=sorted.slice(0,Number(box.dataset.limit));box.replaceChildren();box.classList.remove('feed-error');if(!visible.length){box.append(create('p','feed-empty',what==='news'?'最新消息尚未發布。':'目前沒有可顯示的學術成果。'));continue;}for(const row of visible)box.append(what==='news'?newsLink(row):publicationLink(row,what==='featured-publications'));}catch(error){box.classList.add('feed-error');box.replaceChildren(create('p','feed-empty','內容暫時無法載入，請稍後重新整理。'));console.error('MEGM content feed',error);}}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',draw);else draw();
+})();
